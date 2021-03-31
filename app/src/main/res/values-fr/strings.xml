@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="mdp">Mot de passe</string>
+    <string name="connexion">connexion</string>
+    <string name="messageErreurConnexion">Veuillez remplir tout champs</string>
+    <string name="besoinInternet">L\'application à besoin d\'internet pour fonctionner!</string>
+
+</resources>
