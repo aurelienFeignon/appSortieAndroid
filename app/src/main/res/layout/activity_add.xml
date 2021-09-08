@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddActivity"
+     >
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/add_tv_nom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="nom"
+        android:textSize="15sp"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/add_et_nom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/add_tv_nom"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/add_tv_info_sortie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/add_et_nom"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="description"
+        android:textSize="15sp"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/add_et_info_sortie"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/add_tv_info_sortie"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+
+
+    <CalendarView
+        android:id="@+id/add_et_date_debut"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/add_et_info_sortie"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:inputType="datetime"
+        />
+
+
+    <TimePicker
+        android:id="@+id/add_tp_heure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:timePickerMode="spinner"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_et_date_debut"
+
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/add_tv_ville"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/add_tp_heure"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/selectVille"
+        android:text="Villes:"/>
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/selectVille"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/add_tv_ville"
+        app:layout_constraintTop_toBottomOf="@+id/add_tp_heure"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/add_tv_lieu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/add_tv_ville"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/selectlieu"
+        android:text="Lieu:"/>
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/selectlieu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/add_tv_ville"
+        app:layout_constraintTop_toBottomOf="@+id/selectVille"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/selectlieu"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="@string/add"
+        android:onClick="addEvent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

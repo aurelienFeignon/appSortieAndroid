@@ -1,6 +1,7 @@
 package fr.eni.sortirapp.Bo;
 
 import java.util.Date;
+import java.util.List;
 
 public class Sortie {
     private int id;
@@ -9,21 +10,21 @@ public class Sortie {
     private int duree;
     private int nbInscriptionMax;
     private String infosSortie;
-    private User[] participant;
+    private List<User> participants;
     private User organisateur;
     private Etat etat;
     private Date dateLimiteInsciption;
     private Campus campus;
     private Lieu lieu;
 
-    public Sortie(int id, String nom, Date dateHeureDebut, int duree, int nbInscriptionMax, String infosSortie, User[] participant, User organisateur, Etat etat, Date dateLimiteInsciption, Campus campus, Lieu lieu) {
+    public Sortie(int id, String nom, Date dateHeureDebut, int duree, int nbInscriptionMax, String infosSortie, List<User> participants, User organisateur, Etat etat, Date dateLimiteInsciption, Campus campus, Lieu lieu) {
         this.id = id;
         this.nom = nom;
         this.dateHeureDebut = dateHeureDebut;
         this.duree = duree;
         this.nbInscriptionMax = nbInscriptionMax;
         this.infosSortie = infosSortie;
-        this.participant = participant;
+        this.participants = participants;
         this.organisateur = organisateur;
         this.etat = etat;
         this.dateLimiteInsciption = dateLimiteInsciption;
@@ -74,12 +75,12 @@ public class Sortie {
         this.nbInscriptionMax = nbInscriptionMax;
     }
 
-    public User[] getParticipant() {
-        return participant;
+    public List<User> getParticipants() {
+        return participants;
     }
 
-    public void setParticipant(User[] participant) {
-        this.participant = participant;
+    public void setParticipant(List<User> participant) {
+        this.participants = participant;
     }
 
     public User getOrganisateur() {

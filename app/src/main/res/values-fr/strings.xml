@@ -5,5 +5,6 @@
     <string name="connexion">connexion</string>
     <string name="messageErreurConnexion">Veuillez remplir tout champs</string>
     <string name="besoinInternet">L\'application à besoin d\'internet pour fonctionner!</string>
+    <string name="add">Ajouter</string>
 
 </resources>

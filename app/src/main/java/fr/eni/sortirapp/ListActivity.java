@@ -4,7 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
@@ -22,11 +26,13 @@ public class ListActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private AdapterListSortie adapterListSortie;
+    private FloatingActionButton addButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+        addButton= findViewById(R.id.list_floting_button);
         recyclerView = findViewById(R.id.rwListArticle);
         recyclerView.setHasFixedSize(true);
         layoutManager= new LinearLayoutManager(this);
@@ -37,7 +43,7 @@ public class ListActivity extends AppCompatActivity {
         listCall.enqueue(new Callback<List<Sortie>>() {
             @Override
             public void onResponse(Call<List<Sortie>> call, Response<List<Sortie>> response) {
-                adapterListSortie = new AdapterListSortie(response.body());
+                adapterListSortie = new AdapterListSortie(response.body(),getBaseContext());
                 recyclerView.setAdapter(adapterListSortie);
             }
 
@@ -46,5 +52,13 @@ public class ListActivity extends AppCompatActivity {
 
             }
         });
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(v.getContext(), AddActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG="Le hardy";
 
     SharedPreferences sp;
-    static  final String USER_DOSSIER="userCourant";
-    static  final String CLEF_USER="clef_user";
+   public static  final String USER_DOSSIER="userCourant";
+   public static  final String CLEF_USER="clef_user";
 
 
     @Override
@@ -78,8 +78,8 @@ public class MainActivity extends AppCompatActivity {
                 userCall.enqueue(new Callback<User>() {
                     @Override
                     public void onResponse(Call<User> call, Response<User> response) {
-                        int statut= response.code();
-                        if(statut==200){
+
+                        if(response.isSuccessful()){
                             SharedPreferences.Editor editor= sp.edit();
                             editor.putString(CLEF_USER, Gson.toJson(response.body())).apply();
                             Intent intent= new Intent(view.getContext(),ListActivity.class);
